@@ -231,4 +231,5 @@
    */
   new PureCounter();
 
+  $("#year").text(new Date().getFullYear())
 })()
