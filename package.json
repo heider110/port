@@ -1,18 +1,30 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "portfolio",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Haidar Alkhazaly",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "bootstrap": "^5.3.0-alpha1",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "heroku": "^7.68.2",
     "jquery": "^3.6.3",
+    "nodemailer": "^6.9.1",
     "path": "^0.12.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heider110/port.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heider110/port/issues"
+  },
+  "homepage": "https://github.com/heider110/port#readme"
 }
