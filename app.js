@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/assets'));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'index'))
+  res.sendFile(path.join(__dirname, '/index'))
 });
 const transporter = nodemailer.createTransport({
   host: "smtp.office365.com",
