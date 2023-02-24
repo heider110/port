@@ -79,7 +79,7 @@ app.get("/crypto-wallet", (req, res) => {
 app.get("/simon", (req, res) => {
   res.sendFile(path.join(__dirname, 'simon'))
 });
-
-app.listen(process.env.PORT ||3000, () => {
-  console.log('Listening on port ' + 5000);
+let port =process.env.PORT ||3000;
+app.listen(port, () => {
+  console.log('Listening on port ' +port);
 });
