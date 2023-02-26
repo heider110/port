@@ -44,8 +44,8 @@ app.post('/send', function(req, res) {
   const mailSendBack = {
     from: 'alkhazaly@outlook.de',
     to: req.body.email,
-    subject: "don't reply",
-    text: 'Hello '+req.body.name
+    subject: "Auto-reply: Thank you for contacting me",
+    text: 'Hello '+req.body.name+",\nThank you for contacting me. I have received your message and will respond as soon as possible.\n\nIf you have provided incomplete contact information, I won't be able to contact you unfortunately.\n\nThank you for your understanding.\n\nBest regards,\nHaidar Alkhazaly"
 };
 
   transporter.sendMail(mailOptions , function(error, info){
