@@ -3,18 +3,22 @@ const express = require("express")
 const path = require('path')
 const bodyParser=require("body-parser");
 const nodemailer = require("nodemailer");
-
+const ejs = require("ejs")
 
 const app = express();
-
+app.use(express.static("views"));
 app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/assets'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
+
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, '/index'))
+  res.render(path.join(__dirname, '/index'))
 });
 const transporter = nodemailer.createTransport({
   host: "smtp.office365.com",
@@ -73,11 +77,11 @@ app.post('/send', function(req, res) {
 
 
 app.get("/crypto-wallet", (req, res) => {
-  res.sendFile(path.join(__dirname, 'crypto-wallet'))
+  res.render(path.join(__dirname, '/views/crypto-wallet'))
 });
 
 app.get("/simon", (req, res) => {
-  res.sendFile(path.join(__dirname, 'simon'))
+  res.render(path.join(__dirname, '/views/simon'))
 });
 let port =process.env.PORT ||3000;
 app.listen(port, () => {
