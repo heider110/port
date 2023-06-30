@@ -45,12 +45,12 @@ app.post('/send', function(req, res) {
       text: 'Name: '+req.body.name+'\nEmail: '+req.body.email+'\nMessage: '+req.body.message
   };
 
-  const mailSendBack = {
+  /*const mailSendBack = {
     from: 'alkhazaly@outlook.de',
     to: req.body.email,
     subject: "Auto-reply: Thank you for contacting me",
     text: 'Hello '+req.body.name+",\n\nThank you for contacting me. I have received your message and will respond as soon as possible.\n\nBest regards,\nHaidar Alkhazaly"
-};
+};*/
 
   transporter.sendMail(mailOptions , function(error, info){
       if(error){
